@@ -286,6 +286,10 @@
     const json = JSON.parse(str);
 
     function replaceList () {
+      for (let i = 0; i <countries.length; i += 1) {
+        let obj = countries[i]
+        console.log(obj.name)
+      }
       document.getElementsByClassName('instructions')[0].innerHTML = 'Test';
     }
 
