@@ -281,6 +281,11 @@
     console.log("List of countries in the world", countries);
     /* Storing coutnry codes in the session */
     sessionStorage.setItem("json_codes", JSON.stringify(countries))
+
+    const str = sessionStorage.getItem("json_codes");
+    const json = JSON.parse(str);
+
+    
   </script>
 </body>
 
