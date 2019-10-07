@@ -11,7 +11,7 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list entries</button>
+      <button class="button" onclick="replaceList()">Click me to replace list entries</button>
       <div class="content">
         <ul class="instructions">
           <li>Delete and re-clone the class repository</li>
@@ -285,7 +285,11 @@
     const str = sessionStorage.getItem("json_codes");
     const json = JSON.parse(str);
 
-    
+    function replaceList () {
+      document.getElementsByClass('instructions')[0].innerHTML = 'Test'
+    }
+
+
   </script>
 </body>
 
