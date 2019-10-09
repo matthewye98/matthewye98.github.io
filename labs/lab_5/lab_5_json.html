@@ -282,10 +282,11 @@
     // Storing coutnry codes in the session //
     sessionStorage.setItem("json_codes", JSON.stringify(countries))
 
-    const str = sessionStorage.getItem("json_codes");
-    const json = JSON.parse(str);
+
 
     function replaceList () {
+      const str = sessionStorage.getItem("json_codes");      //gets item from session storage//
+      const json = JSON.parse(str);       //parses it again//
       let countrylist = "";
       /*Randomize the countries array. Taken from: https://css-tricks.com/snippets/javascript/shuffle-array/ */
       countries.sort(function() { return 0.5 - Math.random() });
