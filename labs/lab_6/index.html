@@ -21,7 +21,6 @@
         .then(res => res.json())
         .then(res => res.map(c => c.code))
         .then(codes => document.querySelector(".content").innerText = codes);
-        replaceList()
     }
   </script>
 
