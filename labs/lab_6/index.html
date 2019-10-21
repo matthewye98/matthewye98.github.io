@@ -19,28 +19,26 @@
     function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(res => res.map(c => c.code))
-        .then(codes => document.querySelector(".content").innerText = codes);
+        .then(a => replaceList(a))
+        .then(names => document.querySelector(".content").innerHTML = "<ol>"+names+"</ol>");
     }
   </script>
 
   <script>
-  // Storing coutnry codes in the session //
-  sessionStorage.setItem("json_codes", JSON.stringify(countries))
+  function replaceList (arg) {
 
-  function replaceList () {
-    const str = sessionStorage.getItem("json_codes");      //gets item from session storage//
-    const countries_json = JSON.parse(str);       //parses it again//
     let countrylist = "";
     /*Randomize the countries array. Taken from: https://css-tricks.com/snippets/javascript/shuffle-array/ */
-    countries_json.sort(function() { return 0.5 - Math.random() });
-    for (let i = 0; i <50; i += 1) {
-      let obj = countries_json[i];
+    arg.sort(function() { return 0.5 - Math.random() });
+    for (let i = 0; i <15; i += 1) {
+      let obj = arg[i];
       console.log(obj.name);
-      countrylist += "<li>"+obj.name+"</li>";
+      console.log(obj.code);
+      countrylist += "<li>"+obj.name+", "+obj.code+"</li>";
     }
-    document.getElementsByClassName('instructions')[0].innerHTML = "<ol>"+countrylist+"</ol>";
+    return countrylist;
   }
+
   </script>
 
 
