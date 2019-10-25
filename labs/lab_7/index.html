@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Test AJAX page</title>
+  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">UMD Bus Routes</div>
+      <button class="button" onclick="loadData()">Load Some JSON</button>
+      <div class="content"></div>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    function loadData() {
+      fetch('https://api.umd.io/v0/bus/routes') //fetching the GET endpoint from umd.io
+        .then(res => {console.log(res) //logs out response data and returns it to next step
+                      return res})
+        .then(res => res.json()) //makes an array of route data
+        .then(a => routeList(a)) //lists the bus routes from a function
+        .then(a => a.find(obj => obj.title === '115 Orange')) //finds the bus route of my choice
+        .then(a => busTitle(a)) //function to construct the bus title
+        .then(busname => document.querySelector('.header').innerText = 'UMD Bus Route '+busname) // replaces the title with bus route
+        .then(a=>console.log(a));
+    }
+  </script>
+
+  <script>
+  function routeList (arg) {
+    let routelist = "";
+    for (let i = 0; i < arg.length; i += 1) {
+      let obj = arg[i];
+      routelist += "<li>"+obj.route_id+" - "+obj.title+"</li>";
+    }
+    document.querySelector(".content").innerHTML = "<ul>"+routelist+"<ul>"
+    return arg;
+  }
+
+  function busTitle (obj) {
+    let title = obj.route_id + " " + obj.title;
+    return title;
+  }
+  </script>
+
+</body>
+
+</html>
