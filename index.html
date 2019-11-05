@@ -75,7 +75,7 @@
       <!-- Start Data Science projects -->
       <div class="row">
 
-        <div class="col s12 m6">
+        <div class="col s12 l6">
           <h3>Political Stance and Environmental Spending</h3>
           <p><strong>Hypothesis:</strong> Individuals that identify as liberal will think we are not spending enough money on protecting and improving the environment.</p>
           <p><strong>Method:</strong> Sampled data from the nationally representative 2016 General Social Survey (GSS). Chi-square analysis was used.</p>
@@ -84,7 +84,7 @@
           <p>See the <a href="data1_polenv.pdf">full report.</a></p>
         </div>
 
-        <div class="col s12 m6">
+        <div class="col s12 l6">
           <h3>Gender and Income in the United States</h3>
           <p><strong>Hypothesis:</strong> Men have higher annual income, on average, than women.</p>
           <p><strong>Method:</strong> Sampled data from the nationally representative 2016 GSS. Independent Samples T-test. </p>
@@ -94,14 +94,14 @@
 
       </div>
       <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 l6">
           <h3>Yearly Income and Hours worked/week</h3>
           <p><strong>Hypothesis:</strong> Those who work more hours per week will have higher annual income on average.</p>
           <p><strong>Method:</strong> Sampled data from the nationally representative 2016 GSS. A Simple OLS Regression of Income on Hours worked, with an alpha level of 0.10.</p>
           <p><strong>Results:</strong> At the 0.01 significance level, we can generalize our findings to the target population of working class adults in the U.S. For every extra hour you work per week, you can expect an average increase of 854.2 dollars (p<0.01). </p>
           <p>See the <a href="data3_incomehours.pdf">full report.</a></p>
         </div>
-        <div class="col s12 m6">
+        <div class="col s12 l6">
           <h3>Effect of Hrs/week, gender, number of children, and class on Income</h3>
           <p><strong>Hypothesis:</strong> The combined factors of Hours Worked per Week, Number of Children, Gender, and Number of Children will affect a person’s annual income.</p>
           <p><strong>Method:</strong> Sampled data from the nationally representative 2016 GSS. A Multiple OLS Regression of income on hours worked last week, number of children, gender, and class at an alpha level of 0.01.</p>
@@ -112,7 +112,46 @@
 
 
         </div>
+
+        <div class="divider"></div>
+        <h2>Database Design and Modeling</h2>
+        <p>Work with a team to design and create a relational SQL database that tracks and stores data on mass shootings in the United States.
+        Data was supplied from the <a href="https://www.gunviolencearchive.org/" target="_blank">Gun Violence Archive</a> and the Database was created using MySQL.</p>
+
+
+        <div class="row">
+          <div class="col s12">
+            <h3>Motivation and Rationale</h3>
+            <p>Gun violence is extremely prevalent within American schools, places of worship, movie theaters, and general public spaces.
+            As access to guns are relatively easy in the United States, we wanted to bring awareness to the devastation it causes, as well as provide unbiased data so that people can truly learn about the issues.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s6 l12">
+            <h3>Logical Design</h3>
+            <p>We created our Logical Design by creating a core table and then the surrounding tables. We then identified Primary and Foreign Keys</p>
+          </div>
+          <div class="col s6 m8 l12">
+            <img class="responsive-img" src="images/database_logicaldesign.png" alt="image of our logical design, multiple tables linked together">
+          </div>
+
+          <div class="col s12">
+            <h3>Answering Interesting Questions</h3>
+            <p>We created many SQL queries and created Views to answer intersting and pertinant questions that people might have. These included:</p>
+                <li>Handgun Impact per State</li>
+                <li>Arrested</li>
+                <li>Killed</li>
+                <li>Victims (Not null)</li>
+                <li>Dead Greater than Average</li>
+          </div>
+
+
+        </div>
+
+
       </div>
+
 
     </div>
 

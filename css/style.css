@@ -190,9 +190,15 @@ a:hover {
 
 .portfolio img
 {
-	width: 33%;
+	width: 80%;
 	display: inline-block;
-	float: left;
+	float: center;
+}
+
+.portfolio li
+{
+  color: black;
+  line-height: normal;
 }
 
 .contact .col
