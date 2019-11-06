@@ -42,11 +42,13 @@ app.use(express.static('public'));
 // this is, right now, an introduction to Callback Hell
 // but it is okay for a first-level example
 app.get('/api', (req, res) => {
-  const baseURL = 'https://api.umd.io/v0/courses'; //courses enpoint
+  const baseURL = 'https://api.umd.io/v0/courses/list'; //courses enpoint
   fetch(baseURL)
     .then((r) => r.json())
+    .then(res => res.filter(course => course.dept_id === 'INST'))
+    .then(res => res.map(newarray => newarray.course_id+": "+newarray.name))
     .then((data) => {
-      console.log(data);
+      console.log(data)
       res.send({ data: data });
     })
     .catch((err) => {
