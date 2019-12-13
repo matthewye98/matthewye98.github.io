@@ -10,7 +10,26 @@
 	background-color: #FFFFFF !important;
 }
 
+.blog h1 {
+  color: black;
+  font-size: 4rem
+}
 
+.blog h4 {
+  font-family: 'Merriweather', serif;
+}
+
+.blog h5 {
+  color:#404040;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1em;
+  letter-spacing: -0.025em;
+}
+
+.blog-body {
+  font-family: 'Merriweather', serif;
+  
+}
 
 .portfolio h1 {
   color: black;
